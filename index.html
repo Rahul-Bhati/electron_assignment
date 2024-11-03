@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electron Notes App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      #notes-list {
+        width: 100%;
+        max-width: 600px;
+        margin-bottom: 20px;
+      }
+      ul#notes {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      ul#notes li {
+        background: #fff;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+      }
+      ul#notes li:hover {
+        transform: scale(1.02);
+      }
+      div {
+        width: 100%;
+        max-width: 600px;
+      }
+      textarea#note-content {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      button#save-btn {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      button#save-btn:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div>
+        <textarea
+          id="note-content"
+          rows="10"
+          cols="30"
+          placeholder="Write your note here..."
+        ></textarea>
+        <button id="save-btn">Save</button>
+      </div>
+      <br />
+      <div id="notes-list">
+        <ul id="notes"></ul>
+      </div>
+    </div>
+    <script src="renderer.js"></script>
+  </body>
+</html>
